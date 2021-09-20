@@ -37,6 +37,31 @@
   }
 }
 
+/* Header Styling */
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.name-div {
+  width: 50%;
+  padding: 0 0 0 1%;
+}
+
+.links-div {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 1% 0 0;
+}
+.links-div a {
+  padding: 0 1%;
+  text-decoration: none;
+}
+
+/* Plant Form Styling */
+
 .plant-object {
   margin: 10% 20%;
   padding: 5% 10%;
@@ -44,10 +69,12 @@
   color: white;
   display: flex;
   justify-content: center;
+  border-radius: 10%;
 }
 
 .plant-object div {
   margin: 2% 10%;
+  font-size: 20px;
 }
 
 .errors {
@@ -59,4 +86,5 @@
   background-color: orange;
   color: white;
   font-size: 20px;
+  padding: 5%;
 }
