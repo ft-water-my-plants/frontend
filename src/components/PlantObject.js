@@ -1,10 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import '../App.css';
+import plantSchema from './PlantSchema'
+
+
 
 
 function Plant (props) {
 
     const { /* passed from App.js */ } = props
+
+    const initialFormValues = {
+
+        nickname: '',
+        species: '',
+        water: '',
+        plant_id: '',
+
+    }
 
     const onSubmit = event => {
 
