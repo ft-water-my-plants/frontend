@@ -69,10 +69,12 @@
   color: white;
   display: flex;
   justify-content: center;
+  border-radius: 10%;
 }
 
 .plant-object div {
   margin: 2% 10%;
+  font-size: 20px;
 }
 
 .errors {
@@ -84,4 +86,5 @@
   background-color: orange;
   color: white;
   font-size: 20px;
+  padding: 5%;
 }

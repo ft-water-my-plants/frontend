@@ -13,6 +13,7 @@ function Plant (props) {
 
     }
 
+    
     const onChange = evt => {
 
         const { /* Change functions & values */ } = evt.target
