@@ -22,7 +22,8 @@ const reducer = (state = initialState, action) => {
                 username: action.payload.user.username,
                 token: action.payload.token,
             };
-        default: return state;
+        default: 
+            return state;
     }
 }
 
