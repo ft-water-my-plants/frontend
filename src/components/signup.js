@@ -60,7 +60,7 @@ export default function Signup(props) {
             phoneNumber: signUpValues.phoneNumber,
             password: signUpValues.password,
         }
-        // Needs somewhere to submit the new users to
+        // Needs somewhere to submit the new users to 
     }
 
 
