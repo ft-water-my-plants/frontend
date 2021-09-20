@@ -6,7 +6,6 @@ function Plant () {
 
     return (
         <div className='plant-object'>
-            <h3>Create Plant</h3>
             <form>
                 <div>
                 <label> Nickname: 
@@ -22,10 +21,15 @@ function Plant () {
                 </label>
                 </div>
                 <div>
-                <label> Water Frequency:
-                    <input 
-                    />
-                </label>
+                    <p>Water Frequency:</p>
+                <select> 
+                    <option>-- Select an option --</option>
+                    <option>Three times a day</option>
+                    <option>Twice a day</option>
+                    <option>Once a day</option>
+                    <option>Once a week</option>
+                    <option>Once a month</option>
+                </select>
                 </div>
                 <div>
                 <label> Plant Id:
@@ -33,6 +37,7 @@ function Plant () {
                     />
                 </label>
                 </div>
+                <button>Submit</button>
             </form>
         </div>
     )

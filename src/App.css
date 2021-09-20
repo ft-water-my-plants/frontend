@@ -40,5 +40,12 @@
 .plant-object {
   margin: 10% 20%;
   padding: 5% 10%;
-  background-color: #61dafb;
+  background-color: #228B22;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.plant-object div {
+  margin: 2% 10%;
 }
