@@ -60,7 +60,7 @@ export default function Signup(props) {
             phoneNumber: signUpValues.phoneNumber,
             password: signUpValues.password,
         }
-        
+        // Needs somewhere to submit the new users to
     }
 
 
@@ -73,30 +73,39 @@ export default function Signup(props) {
 
     return(
         <div>
+            <h3>Sign up to start tracking your plants!</h3>
             <form onSubmit={submitChange}>
                 <div className="errors">
-
+                    <div>{errorText.username}</div>
+                    <div>{errorText.phoneNumber}</div>
+                    <div>{errorText.password}</div>
                 </div>
                 <label> Username:
                     <input 
                         type="text"
                         name="username"
+                        placeholder="Enter a username"
                         onChange={change}
-                        />
+                        value={signUpValues.username}
+                    />
                 </label>
                 <label> Phone Number:
                     <input 
                         type="text"
                         name="phoneNumber"
+                        placeholder="Enter your phone number"
                         onChange={change}
-                        />
+                        value={signUpValues.phoneNumber}
+                    />
                 </label>
                 <label> Password:
                     <input 
                         type="password"
                         name="password"
+                        placeholder="Enter a password"
                         onChange={change}
-                        />
+                        value={signUpValues.password}
+                    />
                 </label>
                 <button disabled={disabled}>SignUp!</button>
             </form>
