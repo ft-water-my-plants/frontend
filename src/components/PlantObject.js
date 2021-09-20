@@ -18,6 +18,24 @@ function Plant (props) {
 
     }
 
+    const initialFormErrors = {
+
+        nickname: '',
+        species: '',
+        water: '',
+        plant_id: '',
+    }
+
+    const initialPlant = []
+    const initialDisabled = true
+
+    // Setting states for form
+
+    const [ plant, setPlant ] = useState(initialPlant)
+    const [ formValues, setFormValues] = useState(initialFormValues)
+    const [ formErrors, setFormErrors ] = useState(initialFormErrors)
+    const [ disabled, setDisabled ] = useState(initialDisabled)
+
     const onSubmit = event => {
 
         event.preventDefault()
