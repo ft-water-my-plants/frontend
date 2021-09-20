@@ -11,6 +11,7 @@ function Plant () {
                 <div>
                 <label> Nickname: 
                     <input 
+                    type="text"
                     />
                 </label>
                 </div>
