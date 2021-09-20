@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.plant-object {
+  margin: 10% 20%;
+  padding: 5% 10%;
+  background-color: #61dafb;
+}
