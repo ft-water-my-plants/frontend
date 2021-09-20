@@ -49,3 +49,14 @@
 .plant-object div {
   margin: 2% 10%;
 }
+
+.errors {
+  color: red;
+}
+
+#submit_btn {
+  margin: 5%;
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+}
