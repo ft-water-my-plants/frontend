@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../App.css';
 import plantSchema from './PlantSchema'
+import * as yup from 'yup'
 
 
 
@@ -36,35 +37,78 @@ function Plant (props) {
     const [ formErrors, setFormErrors ] = useState(initialFormErrors)
     const [ disabled, setDisabled ] = useState(initialDisabled)
 
+
+    /* --- Event Handlers  ---*/
+
+    const validate = ( name, value ) => {
+
+        yup.reach( plantSchema , name )
+        .validate(value)
+        .then( () => setFormErrors({ ...formErrors, [name]: ''})) 
+        .catch( err => setFormErrors( { ...formErrors , [name]: err.errors[0]} ))
+    
+      }
+
+      const inputChange = ( name, value) => {
+
+        validate( name, value )
+        setFormValues({
+          ...formValues, [name]: value
+        })
+      }
+
+      const formSubmit = () => {
+
+        const newPlant = {
+          nickname: formValues.nickname.trim(),
+          species: formValues.species.trim(),
+          water: formValues.water
+          plant_id: formValues.plant_id
+        }
+
+        /* Post newPlant function goes here with API call*/
+
+    }
+
+    // Adjusting the state of disabled everytime formValues change
+
+        useEffect( () => {
+            plantSchema.isValid(formValues)
+            .then( valid => {
+            setDisabled(!valid)
+            })
+        }, [formValues])
+
     const onSubmit = event => {
 
         event.preventDefault()
-        /* Add submit function */
+        formSubmit()
 
     }
 
     
     const onChange = evt => {
 
-        const { /* Change functions & values */ } = evt.target
+        const { name, value, type} = evt.target
         
     }
 
     return (
         <div className='plant-object'>
-            <form onSubmit>
+            <form onSubmit={onSubmit}>
             <div className='errors'>
-                <div>{/* Errors go here. */}</div>
-                <div>{/* Errors go here. */}</div>
-                <div>{/* Errors go here. */}</div>
-                <div>{/* Errors go here. */}</div>
+                <div>{errors.nickname}</div>
+                <div>{errors.species}</div>
+                <div>{errors.water}</div>
+                <div>{errors.plant_id}</div>
             </div>
                 <div>
                 <label> Nickname: 
                     <input 
                     name='nickname'
                     type="text"
-                    
+                    onChange={onChange}
+                    value={formValues.nickname}
                     />
                 </label>
                 </div>
@@ -73,7 +117,8 @@ function Plant (props) {
                     <input 
                     name='species'
                     type='text'
-                    
+                    onChange={onChange}
+                    value={formValues.species}
                     />
                 </label>
                 </div>
@@ -81,7 +126,9 @@ function Plant (props) {
                     <p>Water Frequency:</p>
                 <select
                 name='water'
-                
+                onChange={onChange}
+                value={formValues.water}
+
                 > 
                     <option>-- Select an option --</option>
                     <option>Three times a day</option>
@@ -96,11 +143,13 @@ function Plant (props) {
                     <input 
                     type='text'
                     name='plant_id'
+                    onChange={onChange}
+                    value={formValues.plant_id}
                     
                     />
                 </label>
                 </div>
-                <button id="submit_btn">Submit</button>
+                <button disabled={disabled} id="submit_btn">Submit</button>
             </form>
         </div>
     )
