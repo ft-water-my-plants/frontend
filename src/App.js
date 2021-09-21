@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Plant from './components/PlantObject';
 import Signup from './components/signup';
+import Login from './components/Login';
 
 // import * as yup from 'yup';
 
@@ -27,8 +28,8 @@ function App() {
             <h1>Water my Plants</h1>
             <Route path='/plants' component={Plant} />
             <Route path='/signup' component={Signup} />
-            <Route path='/login' />
-            <Route path='/' />
+            <Route path='/login' component={Login}/>
+            <Route path='/' component={Login}/>
           </center>
         </Switch>
       </div>
