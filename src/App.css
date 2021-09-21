@@ -49,13 +49,13 @@
   padding: 0 0 0 1%;
 }
 
-.links-div {
+.links-list {
   width: 50%;
   display: flex;
   justify-content: flex-end;
   padding: 0 1% 0 0;
 }
-.links-div a {
+.links-list li {
   padding: 0 1%;
   text-decoration: none;
 }
