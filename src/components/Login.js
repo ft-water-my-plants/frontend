@@ -3,6 +3,12 @@ import { useHistory } from 'react-router-dom';
 import { loginStart } from "../actions";
 import { connect } from 'react-redux';
 
+const credentials = {
+    username: '',
+    phoneNumber: '',
+    password: '',
+}
+
 function Login(props){
     const [login, setLogin] = useState(credentials);
     const { push } = useHistory();

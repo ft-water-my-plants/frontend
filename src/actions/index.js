@@ -6,7 +6,7 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const loginStart = credentials => dispatch => {
     dispatch({ type: LOGIN });
     return axios
-    .post('', credentials)
+    .post(``, credentials)
     .then(res => {
         console.log('Login Data', res)
         dispatch({ type: LOGIN_USER, payload: res.data })
