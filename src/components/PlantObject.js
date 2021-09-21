@@ -7,9 +7,8 @@ import axios from 'axios'
 
 
 
-function Plant (props) {
+function Plant () {
 
-    const { /* passed from App.js */ } = props
 
     const initialFormValues = {
 

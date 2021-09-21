@@ -16,10 +16,6 @@ const plantSchema = yup.object().shape({
     .string()
     .oneOf(['Three times a day', 'Twice a day', 'Once a day', 'Once a week', 'Once a month'], 'Must be one of our frequencies'),
 
-    plant_id: yup
-    .string()
-    .required('Plant ID is required.')
-
 
 })
 
