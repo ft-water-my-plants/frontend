@@ -36,9 +36,30 @@ function Login(props){
                 <input 
                     type="text"
                     name="username"
-                    value
+                    placeholder="Enter your username"
+                    value={login.username}
+                    onChange={handleChange}
                 />
                 </label>
+                <label> Phone Number: 
+                    <input
+                        type="text"
+                        name="phoneNumber"
+                        placeholder="Enter your phone number"
+                        value={login.phoneNumber}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label> Password:
+                    <input
+                        type="password" 
+                        name="password"
+                        placeholder="Enter your password"
+                        value={login.password}
+                        onChange={handleChange}
+                    />
+                </label>
+                <button>Login</button>
             </form>
         </div>
     )
