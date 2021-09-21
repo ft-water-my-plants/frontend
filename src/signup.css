@@ -1,0 +1,16 @@
+.form-container {
+    background-color: lightgray;
+    width: 40%;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-input {
+    padding: 1% 0;
+}
+

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import signUpSchema from '../signupSchema';
+import signUpSchema from './signupSchema';
 import * as yup from 'yup'
+import '../signup.css';
 
 
 export default function Signup(props) {
@@ -21,8 +22,10 @@ export default function Signup(props) {
     };
 
     const initialDisabled = true;
+    const initialUser = [];
 
     // Setting state for form values, error values & submit button
+    const [user, setUser] = useState(initialUser);
     const [signUpValues, setSignUpValues] = useState(initialSignUpValues);
     const [errorText, setErrorText] = useState(initialErrorText);
     const [disabled, setDisabled] = useState(initialDisabled);
@@ -74,42 +77,44 @@ export default function Signup(props) {
 
     return(
         <div>
-            <h3>Sign up to start tracking your plants!</h3>
-            <form onSubmit={submitChange}>
-                <div className="errors">
-                    <div>{errorText.username}</div>
-                    <div>{errorText.phoneNumber}</div>
-                    <div>{errorText.password}</div>
-                </div>
-                <label> Username:
-                    <input 
-                        type="text"
-                        name="username"
-                        placeholder="Enter a username"
-                        onChange={change}
-                        value={signUpValues.username}
-                    />
-                </label>
-                <label> Phone Number:
-                    <input 
-                        type="text"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        onChange={change}
-                        value={signUpValues.phoneNumber}
-                    />
-                </label>
-                <label> Password:
-                    <input 
-                        type="password"
-                        name="password"
-                        placeholder="Enter a password"
-                        onChange={change}
-                        value={signUpValues.password}
-                    />
-                </label>
-                <button disabled={disabled}>SignUp!</button>
-            </form>
+            <div className="form-container">
+                <h3>Sign up to start tracking your plants!</h3>
+                <form onSubmit={submitChange} className="signup-form">
+                    <div className="errors">
+                        <div>{errorText.username}</div>
+                        <div>{errorText.phoneNumber}</div>
+                        <div>{errorText.password}</div>
+                    </div>
+                        <label className="signup-input"> Username:
+                            <input 
+                                type="text"
+                                name="username"
+                                placeholder="Enter a username"
+                                onChange={change}
+                                value={signUpValues.username}
+                            />
+                        </label>
+                        <label className="signup-input"> Phone Number:
+                            <input 
+                                type="text"
+                                name="phoneNumber"
+                                placeholder="Enter your phone number"
+                                onChange={change}
+                                value={signUpValues.phoneNumber}
+                            />
+                        </label>
+                        <label className="signup-input"> Password:
+                            <input 
+                                type="password"
+                                name="password"
+                                placeholder="Enter a password"
+                                onChange={change}
+                                value={signUpValues.password}
+                            />
+                        </label>
+                    <button disabled={disabled}>SignUp!</button>
+                </form>
+            </div>
         </div>
     )
 }
