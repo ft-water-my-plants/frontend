@@ -43,7 +43,9 @@ function Plant (props) {
     
     
     const postPlant = newPlant => {
+
         axios.post(`https://water-my-plants-bw3.herokuapp.com/api/`, newPlant) 
+
         .then( res => {
           
           setPlant([res.data , ...plant])
