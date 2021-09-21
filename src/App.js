@@ -18,13 +18,13 @@ function App() {
           </div>
           <ul className="links-list">
             <li>
-              <Link to='/plants'>Plants</Link>
+              <Link className="link" to='/plants'>Plants</Link>
             </li>
             <li>
-              <Link to='/signup'>New Account</Link>
+              <Link className="link" to='/signup'>New Account</Link>
             </li>
             <li>
-              <Link to='/login'>Login</Link>
+              <Link className="link" to='/login'>Login</Link>
             </li>
           </ul>
         </header>

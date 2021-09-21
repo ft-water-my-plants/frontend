@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { loginStart } from "../actions";
 import { connect } from 'react-redux';
 import * as yup from 'yup';
 import LoginSchema from './LoginSchema';
+import '../Login.css';
 
 
 const credentials = {
@@ -84,7 +85,7 @@ function Login(props){
                     />
                 </label>
                 <button>Login</button>
-                <p>Don't have an account? <Link to="/signup">Create new account</Link></p>
+                <p>Don't have an account? <NavLink className="link" to="/signup">Create new account</NavLink></p>
             </form>
         </div>
     )
