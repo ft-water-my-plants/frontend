@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import signUpSchema from './signupSchema';
 import * as yup from 'yup'
 import '../signup.css';
@@ -76,7 +77,7 @@ export default function Signup(props) {
 
 
     return(
-        <div>
+        <div className="signup-bg">
             <div className="form-container">
                 <h3>Sign up to start tracking your plants!</h3>
                 <form onSubmit={submitChange} className="signup-form">
@@ -113,6 +114,7 @@ export default function Signup(props) {
                             />
                         </label>
                     <button disabled={disabled}>SignUp!</button>
+                    <p>Already have an account? <Link className="link" to="/login">Login</Link></p>
                 </form>
             </div>
         </div>
