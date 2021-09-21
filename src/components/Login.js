@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { loginStart } from "../actions";
 import { connect } from 'react-redux';
+import * as yup from 'yup';
+import LoginSchema from './LoginSchema';
+
 
 const credentials = {
     username: '',
@@ -9,12 +12,20 @@ const credentials = {
     password: '',
 }
 
+const initialErrors = {
+    username: '',
+    phoneNumber: '',
+    password: '',
+}
+
 function Login(props){
     const [login, setLogin] = useState(credentials);
+    const [errorMessage, setErrorMessage] = useState(initialErrors);
     const { push } = useHistory();
 
     const handleChange = (e) => {
         console.log(e.target.value);
+        validate(e.target.name, e.target.value);
         setLogin({
             ...login,
             [e.target.name]: e.target.value,
@@ -28,10 +39,23 @@ function Login(props){
         console.log('Successful login!')
     }
 
+    // Validating login values
+    const validate = (name, value) => {
+        yup.reach(LoginSchema, name)
+            .validate(value)
+            .then(() => setErrorMessage({ ...errorMessage, [name]: '' }))
+            .catch(err => setErrorMessage({ ...errorMessage, [name]: err.errors[0] }))
+    }
+
     return(
         <div className='login-wrapper'>
             <h1>Login</h1>
             <form className='login-form' onSubmit={handleSubmit}>
+                <div className="errors">
+                    <div>{errorMessage.username}</div>
+                    <div>{errorMessage.phoneNumber}</div>
+                    <div>{errorMessage.password}</div>
+                </div>
                 <label> Username: 
                 <input 
                     type="text"
@@ -60,6 +84,7 @@ function Login(props){
                     />
                 </label>
                 <button>Login</button>
+                <p>Don't have an account? <Link to="/signup">Create new account</Link></p>
             </form>
         </div>
     )
