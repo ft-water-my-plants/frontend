@@ -12,17 +12,22 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <ul>
-          <li>
-            <Link to='/plants'>Plants</Link>
-          </li>
-          <li>
-            <Link to='/signup'>New Account</Link>
-          </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-        </ul>
+        <header className="header">
+          <div className="name-div">
+            <h2>Water my Plants</h2>
+          </div>
+          <ul className="links-list">
+            <li>
+              <Link to='/plants'>Plants</Link>
+            </li>
+            <li>
+              <Link to='/signup'>New Account</Link>
+            </li>
+            <li>
+              <Link to='/login'>Login</Link>
+            </li>
+          </ul>
+        </header>
         <Switch>
           <center>
             <h1>Water my Plants</h1>

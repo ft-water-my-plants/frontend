@@ -43,7 +43,9 @@ function Plant (props) {
     
     
     const postPlant = newPlant => {
-        axios.post(`https://water-my-plants-bw3.herokuapp.com/api/plants`, newPlant)
+
+        axios.post(`https://water-my-plants-bw3.herokuapp.com/api/`, newPlant) 
+
         .then( res => {
           
           setPlant([res.data , ...plant])
@@ -104,11 +106,8 @@ function Plant (props) {
 
     }
 
-    
     const onChange = evt => {
-
-        const { name, value, type} = evt.target
-        
+        setFormValues({ ...formValues, [evt.target.name]: evt.target.value });        
     }
 
     return (
@@ -155,23 +154,6 @@ function Plant (props) {
                     <option>Once a week</option>
                     <option>Once a month</option>
                 </select>
-                </div>
-                <div>
-                <label> Plant Id:
-                    <input 
-                    type='text'
-                    name='plant_id'
-                    onChange={onChange}
-                    value={formValues.plant_id}
-                    />
-                </label>
-                </div>
-                <div>
-                <label> TESTING:
-                    <input 
-                    type='text'
-                    />
-                </label>
                 </div>
                 <button disabled={disabled} id="submit_btn">Submit</button>
             </form>
