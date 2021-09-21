@@ -38,6 +38,7 @@ function Login(props){
                     name="username"
                     value
                 />
+                </label>
             </form>
         </div>
     )
