@@ -26,7 +26,12 @@ function Login(props){
         <div className='login-wrapper'>
             <h1>Login</h1>
             <form className='login-form' onSubmit={handleSubmit}>
-
+                <label> Username: 
+                <input 
+                    type="text"
+                    name="username"
+                    value
+                />
             </form>
         </div>
     )
