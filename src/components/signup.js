@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import signUpSchema from '../signupSchema';
+import * as yup from 'yup'
 
 
 export default function Signup(props) {

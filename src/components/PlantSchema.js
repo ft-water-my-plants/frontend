@@ -5,7 +5,7 @@ const plantSchema = yup.object().shape({
     nickname: yup
     .string()
     .trim()
-    .required('Nickname is required').
+    .required('Nickname is required'),
 
     species: yup
     .string()

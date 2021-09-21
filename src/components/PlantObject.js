@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../App.css';
 import plantSchema from './PlantSchema'
 import * as yup from 'yup'
+import axios from 'axios'
 
 
 
@@ -37,6 +38,25 @@ function Plant (props) {
     const [ formErrors, setFormErrors ] = useState(initialFormErrors)
     const [ disabled, setDisabled ] = useState(initialDisabled)
 
+    /* --- Need to connect API below---*/
+
+    
+    
+    const postPlant = newPlant => {
+        axios.post(`google.com`, newPlant) 
+        .then( res => {
+          
+          setPlant([res.data , ...plant])
+          setFormValues(initialFormValues)
+        })
+        .catch( err => {
+          console.error(err)
+          setFormValues(initialFormValues)
+        })
+      }  
+      
+      
+
 
     /* --- Event Handlers  ---*/
 
@@ -52,9 +72,7 @@ function Plant (props) {
       const inputChange = ( name, value) => {
 
         validate( name, value )
-        setFormValues({
-          ...formValues, [name]: value
-        })
+        setFormValues({ ...formValues, [name]: value })
       }
 
       const formSubmit = () => {
@@ -62,15 +80,15 @@ function Plant (props) {
         const newPlant = {
           nickname: formValues.nickname.trim(),
           species: formValues.species.trim(),
-          water: formValues.water
-          plant_id: formValues.plant_id
+          water: formValues.water,
+          plant_id: formValues.plant_id,
         }
 
-        /* Post newPlant function goes here with API call*/
+        postPlant(newPlant)
 
     }
 
-    // Adjusting the state of disabled everytime formValues change
+    // Adjusting the state of disabled every time formValues change
 
         useEffect( () => {
             plantSchema.isValid(formValues)
@@ -97,10 +115,10 @@ function Plant (props) {
         <div className='plant-object'>
             <form onSubmit={onSubmit}>
             <div className='errors'>
-                <div>{errors.nickname}</div>
-                <div>{errors.species}</div>
-                <div>{errors.water}</div>
-                <div>{errors.plant_id}</div>
+                <div>{formErrors.nickname}</div>
+                <div>{formErrors.species}</div>
+                <div>{formErrors.water}</div>
+                <div>{formErrors.plant_id}</div>
             </div>
                 <div>
                 <label> Nickname: 
@@ -145,7 +163,13 @@ function Plant (props) {
                     name='plant_id'
                     onChange={onChange}
                     value={formValues.plant_id}
-                    
+                    />
+                </label>
+                </div>
+                <div>
+                <label> TESTING:
+                    <input 
+                    type='text'
                     />
                 </label>
                 </div>
