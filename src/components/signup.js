@@ -34,7 +34,7 @@ export default function Signup(props) {
         yup.reach(signUpSchema, name)
             .validate(value)
             .then(() => setErrorText({...errorText, [name]: "" }))
-            .catch(err => setErrorText({ ...errorText, [name]: err.error[0] }))
+            .catch(err => setErrorText({ ...errorText, [name]: err.errors[0] }))
     }
 
     // Functions for updating form state
