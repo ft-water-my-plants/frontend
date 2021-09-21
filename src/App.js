@@ -34,7 +34,7 @@ function App() {
             <Route path='/plants' component={Plant} />
             <Route path='/signup' component={Signup} />
             <Route path='/login' component={Login}/>
-            <Route path='/' component={Login}/>
+            <Route path='/'/>
           </center>
         </Switch>
       </div>
