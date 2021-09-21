@@ -50,43 +50,45 @@ function Login(props){
 
     return(
         <div className='login-wrapper'>
-            <h1>Login</h1>
-            <form className='login-form' onSubmit={handleSubmit}>
-                <div className="errors">
-                    <div>{errorMessage.username}</div>
-                    <div>{errorMessage.phoneNumber}</div>
-                    <div>{errorMessage.password}</div>
-                </div>
-                <label> Username: 
-                <input 
-                    type="text"
-                    name="username"
-                    placeholder="Enter your username"
-                    value={login.username}
-                    onChange={handleChange}
-                />
-                </label>
-                <label> Phone Number: 
-                    <input
+            <div className="form-container">
+                <h3>Login</h3>
+                <form className='login-form' onSubmit={handleSubmit}>
+                    <div className="errors">
+                        <div>{errorMessage.username}</div>
+                        <div>{errorMessage.phoneNumber}</div>
+                        <div>{errorMessage.password}</div>
+                    </div>
+                    <label className="login-input"> Username: 
+                    <input 
                         type="text"
-                        name="phoneNumber"
-                        placeholder="Enter your phone number"
-                        value={login.phoneNumber}
+                        name="username"
+                        placeholder="Enter your username"
+                        value={login.username}
                         onChange={handleChange}
                     />
-                </label>
-                <label> Password:
-                    <input
-                        type="password" 
-                        name="password"
-                        placeholder="Enter your password"
-                        value={login.password}
-                        onChange={handleChange}
-                    />
-                </label>
-                <button>Login</button>
-                <p>Don't have an account? <Link className="link" to="/signup">Create new account</Link></p>
-            </form>
+                    </label>
+                    <label className="login-input"> Phone Number: 
+                        <input
+                            type="text"
+                            name="phoneNumber"
+                            placeholder="Enter your phone number"
+                            value={login.phoneNumber}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label className="login-input"> Password:
+                        <input
+                            type="password" 
+                            name="password"
+                            placeholder="Enter your password"
+                            value={login.password}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <button>Login</button>
+                    <p>Don't have an account? <Link className="link" to="/signup">Create new account</Link></p>
+                </form>
+            </div>
         </div>
     )
 }
