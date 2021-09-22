@@ -3,6 +3,7 @@ import '../App.css';
 import plantSchema from './PlantSchema'
 import * as yup from 'yup'
 import axios from 'axios'
+import PlantCard from './PlantCard'
 
 
 
@@ -109,6 +110,7 @@ function Plant () {
     }
 
     return (
+
         <div className='plant-object'>
             <form onSubmit={onSubmit}>
             <div className='errors'>
@@ -156,6 +158,7 @@ function Plant () {
                 <button disabled={disabled} className={`submit_btn ${disabled ? 'disabled' : ""}`}>Submit</button>
             </form>
         </div>
+        
     )
 
 }
