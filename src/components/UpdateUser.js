@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
+const initialState = {
+    username: '',
+    phoneNumber: '',
+    password: ''
+}
 
 /* should pass down an existing user OR get existing users within function */
-export default UpdateUser() => {
+function UpdateUser(props) {
+    const { push } = useHistory();
 
     // Need to only be able to update phone number and password, setting state to current number/password
+    const [user, setUser] = useState(initialState);
     const [number, setNumber] = useState(user.phoneNumber);
     const [password, setPassword] = useState(user.password);
 
@@ -18,7 +27,19 @@ export default UpdateUser() => {
             password: password
         }
         // Need to axios put updated user info
+        
+        axios.put(`https://water-my-plants-bw3.herokuapp.com/api/users/login`, user)
+            .then(res => {
+                props.setUser(res.data);
+                push('/users/login');
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        
     }
+
+    
 
     // Changing number and password
     const changeNumber = (e) => {
@@ -57,3 +78,5 @@ export default UpdateUser() => {
             </div>
     )
 }
+
+export default UpdateUser;
