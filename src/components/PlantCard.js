@@ -13,8 +13,10 @@ function PlantCard () {
                 <h3>Water Frequency: (water variable) </h3>
             </div>
             <div>
+                <center>
                 <button>Edit</button>
                 <button>Delete</button>
+                </center>
             </div>
         </div>
     )
