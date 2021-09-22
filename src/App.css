@@ -108,4 +108,12 @@ h3 {
 .disabled {
   background-color: grey;
   }
+
+  .plantcard {
+    margin: 10%;
+    padding: 5% 10%;
+    background-color: #228B22;
+    color: white;
+    border-radius: 5%;
+  }
   
