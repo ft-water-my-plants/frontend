@@ -28,7 +28,7 @@ function UpdateUser(props) {
         }
         // Need to axios put updated user info
         
-        axios.put(`https://water-my-plants-bw3.herokuapp.com/api/users/login`, user)
+        axios.put(`https://water-my-plants-2.herokuapp.com/api/users/login`, user)
             .then(res => {
                 props.setUser(res.data);
                 push('/users/login');

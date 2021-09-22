@@ -4,6 +4,7 @@ import plantSchema from './PlantSchema'
 import * as yup from 'yup'
 import axios from 'axios'
 import PlantCard from './PlantCard'
+import axiosWithAuth from '../helpers/axiosWithAuth';
 
 
 
@@ -42,8 +43,8 @@ function Plant () {
     
     
     const postPlant = newPlant => {
-
-        axios.post(`https://water-my-plants-bw3.herokuapp.com/api/plants`, newPlant) 
+        axiosWithAuth()
+        .post(`https://water-my-plants-bw3.herokuapp.com/api/plants`, newPlant) 
 
         .then( res => {
           

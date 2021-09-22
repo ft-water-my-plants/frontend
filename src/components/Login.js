@@ -9,13 +9,13 @@ import '../Login.css';
 
 const credentials = {
     username: '',
-    phoneNumber: '',
+    // phoneNumber: '',
     password: '',
 }
 
 const initialErrors = {
     username: '',
-    phoneNumber: '',
+    // phoneNumber: '',
     password: '',
 }
 
@@ -55,7 +55,7 @@ function Login(props){
                 <form className='login-form' onSubmit={handleSubmit}>
                     <div className="errors">
                         <div>{errorMessage.username}</div>
-                        <div>{errorMessage.phoneNumber}</div>
+                        {/* <div>{errorMessage.phoneNumber}</div> */}
                         <div>{errorMessage.password}</div>
                     </div>
                     <label className="login-input"> Username: 
@@ -67,15 +67,15 @@ function Login(props){
                         onChange={handleChange}
                     />
                     </label>
-                    <label className="login-input"> Phone Number: 
+                    {/* <label className="login-input"> Phone Number: 
                         <input
                             type="text"
-                            name="phoneNumber"
+                            // name="phoneNumber"
                             placeholder="Enter your phone number"
-                            value={login.phoneNumber}
+                            // value={login.phoneNumber}
                             onChange={handleChange}
                         />
-                    </label>
+                    </label> */}
                     <label className="login-input"> Password:
                         <input
                             type="password" 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import '../App.css';
 import * as yup from 'yup'
-import axios from 'axios'
+import axios from 'axios';
+import axiosWithAuth from '../helpers/axiosWithAuth';
 import Modal from './Modal';
 
 function PlantCard (props) {
@@ -11,7 +12,8 @@ function PlantCard (props) {
     const { id } = props.match.params;
 
     useEffect(() => {
-        axios.get(`https://water-my-plants-bw3.herokuapp.com/api/plants/${id}`)
+        axiosWithAuth()
+        .get(`https://water-my-plants-bw3.herokuapp.com/api/plants/${id}`)
             .then(res => {
                 setPlant(res.data);
             });
@@ -61,4 +63,4 @@ function PlantCard (props) {
     )
 }
 
-export default PlantCard
+export default PlantCard;
