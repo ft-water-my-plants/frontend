@@ -114,6 +114,6 @@ h3 {
     padding: 5% 10%;
     background-color: #228B22;
     color: white;
-    border-radius: 5%;
+    display: flex;
   }
   
