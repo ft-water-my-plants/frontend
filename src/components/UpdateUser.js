@@ -62,6 +62,7 @@ function UpdateUser(props) {
                                     name="phoneNumber"
                                     onChange={changeNumber}
                                     placeholder={user.phoneNumber}
+                                    // value={user.phoneNumber}
                                 />
                             </label>
                             <label className="signup-input"> Password:
@@ -70,9 +71,10 @@ function UpdateUser(props) {
                                     name="password"
                                     onChange={changePassword}
                                     placeholder={user.password}
+                                    // value={user.password}
                                 />
                             </label>
-                            <button>Update</button>
+                            <button className="btn">Update</button>
                         </form>
                     </div>
             </div>

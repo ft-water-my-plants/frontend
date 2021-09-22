@@ -3,11 +3,11 @@
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 83vh;
+    height: 80vh;
 }
 
 .form-container {
-    background-color: lightgray;
+    background-color: #B5CDA3;
     width: 40%;
     border-radius: 10px;
     padding: 1%;
