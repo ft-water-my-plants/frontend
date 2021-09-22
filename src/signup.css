@@ -8,6 +8,7 @@
 
 .form-container {
     background-color: #B5CDA3;
+    filter: drop-shadow(0 0 0.2rem grey);
     width: 40%;
     border-radius: 10px;
     padding: 1%;
