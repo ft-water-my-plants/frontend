@@ -8,6 +8,7 @@ import PrivateRoute from './components/PrivateRoute';
 // import * as yup from 'yup';
 
 import './App.css';
+import UpdateUser from './components/UpdateUser';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
             <h2>Water my Plants</h2>
           </div>
           <ul className="links-list">
+            <li>
+              <Link className="link" to='/user'>Update User</Link>
+            </li>
             <li>
               <Link className="link" to='/plants'>Plants</Link>
             </li>
@@ -33,6 +37,7 @@ function App() {
           <center>
             <h1>Water my Plants</h1>
             <PrivateRoute path='/plants' component={Plant} />
+            <PrivateRoute path='/user' component={UpdateUser} />
             <Route path='/signup' component={Signup} />
             <Route path='/login' component={Login}/>
             <Route path='/'/>
