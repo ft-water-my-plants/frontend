@@ -6,7 +6,6 @@ import axios from 'axios'
 
 
 
-
 function Plant () {
 
 
@@ -154,7 +153,7 @@ function Plant () {
                     <option>Once a month</option>
                 </select>
                 </div>
-                <button disabled={disabled} id="submit_btn">Submit</button>
+                <button disabled={disabled} className={`submit_btn ${disabled ? 'disabled' : ""}`}>Submit</button>
             </form>
         </div>
     )
