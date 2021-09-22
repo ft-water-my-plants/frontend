@@ -134,7 +134,7 @@ export default function Signup(props) {
                                 value={signUpValues.password}
                             />
                         </label>
-                    <button disabled={disabled} onClick={routeChange}>SignUp!</button>
+                    <button className="btn" disabled={disabled} onClick={routeChange}>SignUp!</button>
                     <p>Already have an account? <Link className="link" to="/login">Login</Link></p>
                 </form>
             </div>

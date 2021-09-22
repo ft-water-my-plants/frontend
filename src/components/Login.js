@@ -85,7 +85,7 @@ function Login(props){
                             onChange={handleChange}
                         />
                     </label>
-                    <button>Login</button>
+                    <button className="btn">Login</button>
                     <p>Don't have an account? <Link className="link" to="/signup">Create new account</Link></p>
                 </form>
             </div>
