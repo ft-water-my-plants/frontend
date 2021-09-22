@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import signUpSchema from './signupSchema';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -9,6 +9,12 @@ import '../signup.css';
 export default function Signup(props) {
 
     const { /* props */ } = props;
+
+    // submit onclick re-routes to log in page
+    const history = useHistory();
+    const routeChange = () => {
+        history.push('/login');
+    }
 
     // initial form values, error values & submit button
     const initialSignUpValues = {
@@ -128,7 +134,7 @@ export default function Signup(props) {
                                 value={signUpValues.password}
                             />
                         </label>
-                    <button disabled={disabled}>SignUp!</button>
+                    <button disabled={disabled} onClick={routeChange}>SignUp!</button>
                     <p>Already have an account? <Link className="link" to="/login">Login</Link></p>
                 </form>
             </div>
