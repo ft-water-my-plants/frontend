@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import signUpSchema from './signupSchema';
-import * as yup from 'yup'
+import * as yup from 'yup';
+import axios from 'axios';
 import '../signup.css';
 
 
@@ -66,7 +67,21 @@ export default function Signup(props) {
             password: signUpValues.password,
         }
         // Needs somewhere to submit the new users to 
+        // postUser(newUser);
     }
+
+    // const postUser = (userInfo) => {
+    //     axios.post('https://water-my-plants-bw3.herokuapp.com/api/users/register', userInfo)
+    //         .then(resp => {
+    //             setUser([resp.data, ...user]);
+    //             setSignUpValues(initialSignUpValues);
+    //             console.log(resp);
+    //         }).catch(err => {
+    //             console.log(err)
+    //             setSignUpValues(initialSignUpValues);
+    //         });
+    // }
+    
 
 
     // Validating for button to become !disabled
