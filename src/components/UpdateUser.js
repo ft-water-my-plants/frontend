@@ -40,7 +40,7 @@ export default UpdateUser() => {
                                     type="text"
                                     name="phoneNumber"
                                     onChange={changeNumber}
-                                    defaultValue={user.phoneNumber}
+                                    placeholder={user.phoneNumber}
                                 />
                             </label>
                             <label className="signup-input"> Password:
@@ -48,7 +48,7 @@ export default UpdateUser() => {
                                     type="password"
                                     name="password"
                                     onChange={changePassword}
-                                    defaultValue={user.password}
+                                    placeholder={user.password}
                                 />
                             </label>
                             <button>Update</button>
