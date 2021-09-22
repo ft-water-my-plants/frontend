@@ -37,6 +37,23 @@
   }
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+label {
+  font-weight: bold;
+}
+
 /* Header Styling */
 
 .header {
@@ -70,6 +87,27 @@
 .link:hover {
   color: #206A5D;
   text-decoration: underline;
+}
+
+/* Button style */
+
+.btn {
+  margin: 2%;
+  padding: 1% 2%;
+  background-color: #444941;
+  color: white;
+}
+.btn:disabled {
+  background-color: lightgray;
+}
+.btn:disabled:hover {
+  background-color: lightgray;
+}
+.btn:hover {
+  background-color: #5F7A61;
+}
+.btn:active {
+  transform: translateY(2px);
 }
 
 /* Plant Form Styling */
