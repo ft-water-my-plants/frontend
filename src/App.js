@@ -4,6 +4,7 @@ import Plant from './components/PlantObject';
 import Signup from './components/signup';
 import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
+import PlantCard from './components/PlantCard'
 
 // import * as yup from 'yup';
 
@@ -36,6 +37,7 @@ function App() {
         <Switch>
           <center>
             <h1>Water my Plants</h1>
+            <Route path='/plant-card' component={PlantCard} />
             <PrivateRoute path='/plants' component={Plant} />
             <PrivateRoute path='/user' component={UpdateUser} />
             <Route path='/signup' component={Signup} />

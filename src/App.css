@@ -108,4 +108,24 @@ h3 {
 .disabled {
   background-color: grey;
   }
+
+  .plantcard {
+    margin: 10%;
+    padding: 5% 10%;
+    background-color: #228B22;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cardbutton {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .plantcard button {
+    margin: 10%;
+    font-size: 25px;
+  }
   
