@@ -16,7 +16,6 @@ function Plant () {
         nickname: '',
         species: '',
         water: '',
-        plant_id: '',
 
     }
 
@@ -25,7 +24,6 @@ function Plant () {
         nickname: '',
         species: '',
         water: '',
-        plant_id: '',
     }
 
     const initialPlant = []
@@ -37,10 +35,6 @@ function Plant () {
     const [ formValues, setFormValues] = useState(initialFormValues)
     const [ formErrors, setFormErrors ] = useState(initialFormErrors)
     const [ disabled, setDisabled ] = useState(initialDisabled)
-
-    /* --- Need to connect API below---*/
-
-    
     
     const postPlant = newPlant => {
         axiosWithAuth()
@@ -83,7 +77,6 @@ function Plant () {
           nickname: formValues.nickname.trim(),
           species: formValues.species.trim(),
           water: formValues.water,
-          plant_id: formValues.plant_id,
         }
 
         postPlant(newPlant)
@@ -118,7 +111,6 @@ function Plant () {
                 <div>{formErrors.nickname}</div>
                 <div>{formErrors.species}</div>
                 <div>{formErrors.water}</div>
-                <div>{formErrors.plant_id}</div>
             </div>
                 <div>
                 <label> Nickname: 
