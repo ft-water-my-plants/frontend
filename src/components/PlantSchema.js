@@ -12,10 +12,12 @@ const plantSchema = yup.object().shape({
     .trim()
     .required('Species is required.'),
 
-    water: yup
-    .string()
-    .oneOf(['Three times a day', 'Twice a day', 'Once a day', 'Once a week', 'Once a month'], 'Must be one of our frequencies'),
+    h2oFrequency: yup
+    .number()
+    .oneOf([1, 2, 3, 4, 5], 'Must be one of our frequencies'),
 
+    image: yup
+    .string()
 
 })
 
