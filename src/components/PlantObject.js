@@ -138,17 +138,17 @@ function Plant () {
                 <div>
                     <p>Water Frequency:</p>
                 <select
-                name='water'
+                name='h2oFrequency'
                 onChange={onChange}
-                value={formValues.water}
+                value={formValues.h2oFrequency}
 
                 > 
                     <option>-- Select an option --</option>
-                    <option>Three times a day</option>
-                    <option>Twice a day</option>
-                    <option>Once a day</option>
-                    <option>Once a week</option>
-                    <option>Once a month</option>
+                    <option value='1'>Three times a day</option>
+                    <option value='2'>Twice a day</option>
+                    <option value='3'>Once a day</option>
+                    <option value='4'>Once a week</option>
+                    <option value='5'>Once a month</option>
                 </select>
                 </div>
                 <div>
