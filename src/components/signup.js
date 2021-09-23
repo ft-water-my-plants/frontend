@@ -77,7 +77,7 @@ export default function Signup(props) {
     }
 
     // const postUser = (userInfo) => {
-    //     axios.post('https://water-my-plants-bw3.herokuapp.com/api/users/register', userInfo)
+    //     axios.post('https://water-my-plants-2.herokuapp.com/api/users/register', userInfo)
     //         .then(resp => {
     //             setUser([resp.data, ...user]);
     //             setSignUpValues(initialSignUpValues);
