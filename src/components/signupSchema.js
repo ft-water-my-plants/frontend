@@ -6,9 +6,9 @@ const signUpSchema = yup.object().shape({
         .string()
         .required('You must enter a username!')
         .min(3, 'Your username must be at least 3 characters!'),
-    phoneNumber: yup
-        .string()
-        .required('You must enter a valid phone number!'),
+    // phoneNumber: yup
+    //     .string()
+    //     .required('You must enter a valid phone number!'),
     password: yup
         .string()
         .required('You must enter a password!')

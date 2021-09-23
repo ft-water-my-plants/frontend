@@ -19,14 +19,12 @@ export default function Signup(props) {
     // initial form values, error values & submit button
     const initialSignUpValues = {
         username: "",
-        phoneNumber: "",
-        password: "",
+        password: ""
     };
 
     const initialErrorText = {
         username: "",
-        phoneNumber: "",
-        password: "",
+        password: ""
     };
 
     const initialDisabled = true;
@@ -37,21 +35,21 @@ export default function Signup(props) {
     const [signUpValues, setSignUpValues] = useState(initialSignUpValues);
     const [errorText, setErrorText] = useState(initialErrorText);
     const [disabled, setDisabled] = useState(initialDisabled);
-    
+
 
     // Validating signUpValues
 
     const validate = (name, value) => {
         yup.reach(signUpSchema, name)
             .validate(value)
-            .then(() => setErrorText({...errorText, [name]: "" }))
+            .then(() => setErrorText({ ...errorText, [name]: "" }))
             .catch(err => setErrorText({ ...errorText, [name]: err.errors[0] }))
     }
 
     // Functions for updating form state
     const onChange = (name, value) => {
         validate(name, value);
-        setSignUpValues({ ...signUpValues, [name]: value});
+        setSignUpValues({ ...signUpValues, [name]: value });
     }
 
     const change = (event) => {
@@ -69,35 +67,33 @@ export default function Signup(props) {
     const submit = () => {
         const newUser = {
             username: signUpValues.username,
-            phoneNumber: signUpValues.phoneNumber,
-            password: signUpValues.password,
+            password: signUpValues.password
         }
-        // Needs somewhere to submit the new users to 
-        // postUser(newUser);
+        postUser(newUser);
     }
 
-    // const postUser = (userInfo) => {
-    //     axios.post('https://water-my-plants-2.herokuapp.com/api/users/register', userInfo)
-    //         .then(resp => {
-    //             setUser([resp.data, ...user]);
-    //             setSignUpValues(initialSignUpValues);
-    //             console.log(resp);
-    //         }).catch(err => {
-    //             console.log(err)
-    //             setSignUpValues(initialSignUpValues);
-    //         });
-    // }
-    
+    const postUser = (newUser) => {
+        axios.post('https://water-my-plants-2.herokuapp.com/api/users/register', newUser)
+            .then(response => {
+                // setUser([resp.data, ...user]);
+                // setSignUpValues(initialSignUpValues);
+                console.log(response);
+            }).catch(err => {
+                console.log(err)
+                // setSignUpValues(initialSignUpValues);
+            });
+    }
+
 
 
     // Validating for button to become !disabled
-    
+
     useEffect(() => {
         signUpSchema.isValid(signUpValues).then(valid => setDisabled(!valid))
     }, [signUpValues]);
 
 
-    return(
+    return (
         <div className="signup-bg">
             <div className="form-container">
                 <h3>Sign up to start tracking your plants!</h3>
@@ -107,34 +103,25 @@ export default function Signup(props) {
                         <div>{errorText.phoneNumber}</div>
                         <div>{errorText.password}</div>
                     </div>
-                        <label className="signup-input"> Username:
-                            <input 
-                                type="text"
-                                name="username"
-                                placeholder="Enter a username"
-                                onChange={change}
-                                value={signUpValues.username}
-                            />
-                        </label>
-                        <label className="signup-input"> Phone Number:
-                            <input 
-                                type="text"
-                                name="phoneNumber"
-                                placeholder="Enter your phone number"
-                                onChange={change}
-                                value={signUpValues.phoneNumber}
-                            />
-                        </label>
-                        <label className="signup-input"> Password:
-                            <input 
-                                type="password"
-                                name="password"
-                                placeholder="Enter a password"
-                                onChange={change}
-                                value={signUpValues.password}
-                            />
-                        </label>
-                    <button className="btn" disabled={disabled} onClick={routeChange}>SignUp!</button>
+                    <label className="signup-input"> Username:
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Enter a username"
+                            onChange={change}
+                            value={signUpValues.username}
+                        />
+                    </label>
+                    <label className="signup-input"> Password:
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter a password"
+                            onChange={change}
+                            value={signUpValues.password}
+                        />
+                    </label>
+                    <button className="btn">SignUp!</button>
                     <p>Already have an account? <Link className="link" to="/login">Login</Link></p>
                 </form>
             </div>
