@@ -16,7 +16,7 @@ function App() {
   const [plant, setPlant] = useState([]);
 
   useEffect(() => {
-    axios.get('https://water-my-plants-bw3.herokuapp.com/api/plants')
+    axios.get('https://water-my-plants-2.herokuapp.com/api/plants')
     .then(res => {
       setPlant(res.data);
     })

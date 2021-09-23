@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as yup from 'yup';
 import LoginSchema from './LoginSchema';
 import '../Login.css';
+import axios from 'axios';
 
 
 const credentials = {
@@ -35,9 +36,17 @@ function Login(props){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.loginStart(login)
-        push('/plants')
-        console.log('Successful login!')
+        axios
+            .post(`https://water-my-plants-2.herokuapp.com/api/users/login`, login)
+            .then((res) => {
+                console.log("Successful login!", res);
+                localStorage.setItem("token", res.data.token);
+                localStorage.setItem("username", res.data.username);
+                push("/plants");
+            })
+            .catch((err) => console.log(err));
+        // props.loginStart(login)
+        // push('/plants')
     }
 
     // Validating login values

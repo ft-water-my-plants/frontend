@@ -40,7 +40,7 @@ function Plant () {
     
     const postPlant = newPlant => {
         axiosWithAuth()
-        .post(`https://water-my-plants-bw3.herokuapp.com/api/plants`, newPlant) 
+        .post(`https://water-my-plants-2.herokuapp.com/api/plants`, newPlant) 
 
         .then( res => {
           

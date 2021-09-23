@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import * as yup from 'yup'
 import axios from 'axios';
@@ -13,7 +13,7 @@ function PlantCard (props) {
 
     useEffect(() => {
         axiosWithAuth()
-        .get(`https://water-my-plants-bw3.herokuapp.com/api/plants/${id}`)
+        .get(`https://water-my-plants-2.herokuapp.com/api/plants/${id}`)
             .then(res => {
                 setPlant(res.data);
             });
@@ -32,7 +32,7 @@ function PlantCard (props) {
     }
 
     const handleYesFunc = () => {
-        axios.delete(`https://water-my-plants-bw3.herokuapp.com/api/plants/${plant.id}`)
+        axios.delete(`https://water-my-plants-2.herokuapp.com/api/plants/${plant.id}`)
         .then(res => {
             props.setPlant(res.data);
             props.history.push('/plants');
