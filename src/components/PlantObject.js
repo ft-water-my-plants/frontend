@@ -15,8 +15,8 @@ function Plant () {
 
         nickname: '',
         species: '',
-        water: '',
-        plant_id: '',
+        h2oFrequency: 0,
+        image: '',
 
     }
 
@@ -24,8 +24,8 @@ function Plant () {
 
         nickname: '',
         species: '',
-        water: '',
-        plant_id: '',
+        h2oFrequency: '',
+        image: '',
     }
 
     const initialPlant = []
@@ -37,10 +37,6 @@ function Plant () {
     const [ formValues, setFormValues] = useState(initialFormValues)
     const [ formErrors, setFormErrors ] = useState(initialFormErrors)
     const [ disabled, setDisabled ] = useState(initialDisabled)
-
-    /* --- Need to connect API below---*/
-
-    
     
     const postPlant = newPlant => {
         axiosWithAuth()
@@ -82,8 +78,8 @@ function Plant () {
         const newPlant = {
           nickname: formValues.nickname.trim(),
           species: formValues.species.trim(),
-          water: formValues.water,
-          plant_id: formValues.plant_id,
+          h2oFrequency: formValues.h2oFrequency,
+          image: formValues.image,
         }
 
         postPlant(newPlant)
@@ -117,8 +113,7 @@ function Plant () {
             <div className='errors'>
                 <div>{formErrors.nickname}</div>
                 <div>{formErrors.species}</div>
-                <div>{formErrors.water}</div>
-                <div>{formErrors.plant_id}</div>
+                <div>{formErrors.h2oFrequency}</div>
             </div>
                 <div>
                 <label> Nickname: 
@@ -156,6 +151,17 @@ function Plant () {
                     <option>Once a month</option>
                 </select>
                 </div>
+                <div>
+                <label> Image URL (optional):
+                    <input 
+                    name='image'
+                    type='text'
+                    onChange={onChange}
+                    value={formValues.image}
+                    />
+                </label>
+                </div>
+                <div></div>
                 <button disabled={disabled} className={`submit_btn ${disabled ? 'disabled' : ""}`}>Submit</button>
             </form>
         </div>
