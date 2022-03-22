@@ -1,6 +1,33 @@
-# Getting Started with Create React App
+## Water My Plants
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that allows you to set reminders for when to water your plants
+
+## Motivation
+
+Group project for Bloomtech students to practice the creation of a full-fledged web application, frontend and backend.
+
+## Project Link
+
+[Water My Plants Deployed Front End](https://water-my-plants1000.herokuapp.com/signup)
+
+## Tech/framework used
+
+React
+Heroku
+
+
+## Project Installation
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
 
 ## Available Scripts
 
